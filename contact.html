@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="○○学園へのお問い合わせはこちらから。入学に関するご質問、学校見学のご予約など、お気軽にご相談ください。">
+  <meta name="keywords" content="学校,教育,学園,お問い合わせ,資料請求,○○学園">
+  <title>お問い合わせ | ○○学園</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">○○<span>学園</span></a>
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="about.html">学園について</a></li>
+            <li><a href="index.html#services">教育内容</a></li>
+            <li><a href="index.html#news">お知らせ</a></li>
+            <li><a href="contact.html" class="active">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>お問い合わせ</h1>
+      <p>Contact</p>
+      <div class="breadcrumb">
+        <a href="index.html">ホーム</a>
+        <span> &gt; </span>
+        <span>お問い合わせ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <h2 class="section-title">
+        <span>CONTACT FORM</span>
+        お問い合わせフォーム
+      </h2>
+      <div class="contact-content">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="inquiry-type">
+              お問い合わせ種別
+              <span class="required">必須</span>
+            </label>
+            <select id="inquiry-type" name="inquiry-type" required>
+              <option value="">選択してください</option>
+              <option value="admission">入学に関するお問い合わせ</option>
+              <option value="tour">学校見学のご予約</option>
+              <option value="document">資料請求</option>
+              <option value="event">説明会・イベントについて</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="name">
+              お名前
+              <span class="required">必須</span>
+            </label>
+            <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label for="furigana">
+              フリガナ
+              <span class="required">必須</span>
+            </label>
+            <input type="text" id="furigana" name="furigana" placeholder="ヤマダ タロウ" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              メールアドレス
+              <span class="required">必須</span>
+            </label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">
+              電話番号
+            </label>
+            <input type="tel" id="phone" name="phone" placeholder="03-1234-5678">
+          </div>
+
+          <div class="form-group">
+            <label for="postal-code">
+              郵便番号
+            </label>
+            <input type="text" id="postal-code" name="postal-code" placeholder="123-4567">
+          </div>
+
+          <div class="form-group">
+            <label for="address">
+              ご住所
+            </label>
+            <input type="text" id="address" name="address" placeholder="東京都○○区○○町1-2-3">
+          </div>
+
+          <div class="form-group">
+            <label for="student-name">
+              お子様のお名前
+            </label>
+            <input type="text" id="student-name" name="student-name" placeholder="山田 花子">
+          </div>
+
+          <div class="form-group">
+            <label for="school-year">
+              お子様の学年
+            </label>
+            <select id="school-year" name="school-year">
+              <option value="">選択してください</option>
+              <option value="elementary-4">小学4年生</option>
+              <option value="elementary-5">小学5年生</option>
+              <option value="elementary-6">小学6年生</option>
+              <option value="junior-1">中学1年生</option>
+              <option value="junior-2">中学2年生</option>
+              <option value="junior-3">中学3年生</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              お問い合わせ内容
+              <span class="required">必須</span>
+            </label>
+            <textarea id="message" name="message" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+          </div>
+
+          <div class="form-group-checkbox">
+            <label>
+              <input type="checkbox" name="privacy" required>
+              <span><a href="#" style="color: var(--primary);">プライバシーポリシー</a>に同意する</span>
+              <span class="required">必須</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">送信する</button>
+        </form>
+
+        <div class="contact-info-box">
+          <h3>お問い合わせ先</h3>
+
+          <div class="contact-info-item">
+            <div class="icon">&#x1F4DE;</div>
+            <div>
+              <h4>お電話</h4>
+              <p>03-1234-5678</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="icon">&#x1F4E0;</div>
+            <div>
+              <h4>FAX</h4>
+              <p>03-1234-5679</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="icon">&#x1F4E7;</div>
+            <div>
+              <h4>メール</h4>
+              <p>info@example-gakuen.ac.jp</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="icon">&#x1F4CD;</div>
+            <div>
+              <h4>所在地</h4>
+              <p>
+                〒123-4567<br>
+                東京都○○区○○町1-2-3
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="icon">&#x1F552;</div>
+            <div>
+              <h4>受付時間</h4>
+              <p>
+                平日 9:00〜17:00<br>
+                <small style="color: var(--gray);">（土日祝日・学校休業日を除く）</small>
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <h4 style="font-size: 0.9375rem; margin-bottom: 15px; color: var(--dark);">ご注意事項</h4>
+            <ul style="font-size: 0.875rem; color: var(--gray); line-height: 1.8;">
+              <li style="margin-bottom: 8px;">・お問い合わせへの回答は、通常2〜3営業日以内にご連絡いたします。</li>
+              <li style="margin-bottom: 8px;">・お急ぎの場合は、お電話にてお問い合わせください。</li>
+              <li>・入力いただいた個人情報は、お問い合わせへの対応以外の目的では使用いたしません。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">○○<span>学園</span></div>
+          <p>
+            〒123-4567<br>
+            東京都○○区○○町1-2-3<br>
+            TEL: 03-1234-5678
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4>メニュー</h4>
+          <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="about.html">学園について</a>
+            <a href="index.html#services">教育内容</a>
+            <a href="index.html#news">お知らせ</a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h4>入学案内</h4>
+          <div class="footer-links">
+            <a href="#">募集要項</a>
+            <a href="#">学校説明会</a>
+            <a href="#">資料請求</a>
+            <a href="#">よくある質問</a>
+          </div>
+        </div>
+        <div class="footer-info">
+          <h4>お問い合わせ</h4>
+          <p>受付時間: 平日 9:00〜17:00</p>
+          <p>TEL: 03-1234-5678</p>
+          <p>FAX: 03-1234-5679</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px; font-size: 0.875rem;">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ○○学園 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
