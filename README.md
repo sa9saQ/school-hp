@@ -1,23 +1,57 @@
-# School Portfolio Website
+# ○○学園 - 学校ウェブサイト
 
-学校課題で作成したポートフォリオサイトです。
+学校課題で作成した架空の学校ウェブサイトです。
 
-## Pages
+## 概要
 
-- **Home** (`index.html`) - トップページ
-- **About** (`about.html`) - 自己紹介ページ
-- **Contact** (`contact.html`) - お問い合わせページ
+「○○学園」という架空の学校をテーマにした3ページ構成のウェブサイトです。
+モダンなデザインとレスポンシブ対応を意識して制作しました。
 
-## Tech Stack
+## ページ構成
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+| ページ | ファイル | 内容 |
+|--------|----------|------|
+| ホーム | `index.html` | トップページ、ヒーローセクション、教育内容、お知らせ |
+| 学園について | `about.html` | 学園の理念、沿革、施設紹介 |
+| お問い合わせ | `contact.html` | お問い合わせフォーム、アクセス情報 |
 
-## Live Demo
+## 機能
 
-[Vercel でホスティング予定]
+- レスポンシブデザイン（モバイル対応）
+- ハンバーガーメニュー（モバイル時）
+- スムーズスクロール
+- お問い合わせフォーム（バリデーション付き）
 
-## License
+## 技術スタック
+
+- **HTML5** - セマンティックなマークアップ
+- **CSS3** - Flexbox / Grid、CSS変数、アニメーション
+- **JavaScript** - Vanilla JS（ライブラリ不使用）
+- **Google Fonts** - Noto Sans JP / Noto Serif JP
+
+## ディレクトリ構成
+
+```
+hp/
+├── index.html      # トップページ
+├── about.html      # 学園について
+├── contact.html    # お問い合わせ
+├── css/
+│   └── style.css   # スタイルシート
+├── js/
+│   └── main.js     # JavaScript
+└── images/         # 画像ファイル
+```
+
+## ローカルでの確認方法
+
+```bash
+# 任意のローカルサーバーで起動
+# 例: VS Code の Live Server 拡張機能
+# 例: Python
+python -m http.server 8000
+```
+
+## ライセンス
 
 MIT
