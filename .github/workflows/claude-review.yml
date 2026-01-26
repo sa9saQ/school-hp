@@ -1,0 +1,88 @@
+# Claude Code GitHub Action Template
+# PRの自動レビュー、@claude mention対応
+#
+# 使い方:
+# 1. このファイルを .github/workflows/claude.yml にコピー
+# 2. リポジトリのSecrets に ANTHROPIC_API_KEY を設定
+#
+# 設定手順:
+# - Settings → Secrets and variables → Actions → New repository secret
+# - Name: ANTHROPIC_API_KEY
+# - Value: sk-ant-api03-... (Anthropic APIキー)
+
+name: Claude Code Review
+
+on:
+  # PR作成/更新時に自動レビュー
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+  # PRコメントで @claude mention
+  issue_comment:
+    types: [created]
+
+  # Issueコメントで @claude mention
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  # PR自動レビュー
+  review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: claude-opus-4-5-20251101
+
+  # @claude mention対応（PRコメント）
+  respond-pr-comment:
+    if: |
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Claude Code Response
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: claude-opus-4-5-20251101
+
+  # @claude mention対応（レビューコメント）
+  respond-review-comment:
+    if: |
+      github.event_name == 'pull_request_review_comment' &&
+      contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Claude Code Response
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: claude-opus-4-5-20251101
